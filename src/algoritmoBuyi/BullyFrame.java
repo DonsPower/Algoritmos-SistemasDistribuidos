@@ -7,6 +7,8 @@
 package algoritmoBuyi;
 
 import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  *
@@ -15,9 +17,11 @@ import java.awt.Color;
 public class BullyFrame extends javax.swing.JFrame {
     int id=0;
     int desicion=0;
+    ArrayList<Integer> arr;
     /** Creates new form BullyFrame */
     public BullyFrame() {
         initComponents();
+        arr=new ArrayList<>();
         this.f1.setVisible(false);
         this.f2.setVisible(false);
         this.f3.setVisible(false);
@@ -34,6 +38,9 @@ public class BullyFrame extends javax.swing.JFrame {
         this.e6.setVisible(false);
         this.e7.setVisible(false);
         this.e8.setVisible(false);
+        for(int i=1;i<9;i++){
+              arr.add(i);
+        }
     }
 
     /** This method is called from within the constructor to
@@ -70,22 +77,22 @@ public class BullyFrame extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         f5 = new javax.swing.JButton();
         c5 = new javax.swing.JButton();
-        t8 = new javax.swing.JTextField();
+        t5 = new javax.swing.JTextField();
         e5 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         f6 = new javax.swing.JButton();
         c6 = new javax.swing.JButton();
-        t5 = new javax.swing.JTextField();
+        t6 = new javax.swing.JTextField();
         e6 = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
         f7 = new javax.swing.JButton();
         c7 = new javax.swing.JButton();
-        t6 = new javax.swing.JTextField();
+        t7 = new javax.swing.JTextField();
         e7 = new javax.swing.JButton();
         jPanel8 = new javax.swing.JPanel();
         f8 = new javax.swing.JButton();
         c8 = new javax.swing.JButton();
-        t7 = new javax.swing.JTextField();
+        t8 = new javax.swing.JTextField();
         e8 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -101,6 +108,11 @@ public class BullyFrame extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
 
         f1.setText("Fallo");
+        f1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                f1ActionPerformed(evt);
+            }
+        });
 
         c1.setText("Cordinador");
         c1.addActionListener(new java.awt.event.ActionListener() {
@@ -118,6 +130,11 @@ public class BullyFrame extends javax.swing.JFrame {
         });
 
         e1.setText("Entrar");
+        e1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                e1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -158,6 +175,11 @@ public class BullyFrame extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(255, 204, 204));
 
         f2.setText("Fallo");
+        f2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                f2ActionPerformed(evt);
+            }
+        });
 
         c2.setText("Cordinador");
         c2.addActionListener(new java.awt.event.ActionListener() {
@@ -175,6 +197,11 @@ public class BullyFrame extends javax.swing.JFrame {
         });
 
         e2.setText("Entrar");
+        e2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                e2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -190,7 +217,7 @@ public class BullyFrame extends javax.swing.JFrame {
                     .addComponent(c2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(f2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(e2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -209,6 +236,11 @@ public class BullyFrame extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 204, 204));
 
         f3.setText("Fallo");
+        f3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                f3ActionPerformed(evt);
+            }
+        });
 
         c3.setText("Cordinador");
         c3.addActionListener(new java.awt.event.ActionListener() {
@@ -226,6 +258,11 @@ public class BullyFrame extends javax.swing.JFrame {
         });
 
         e3.setText("Entrar");
+        e3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                e3ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -238,10 +275,10 @@ public class BullyFrame extends javax.swing.JFrame {
                     .addComponent(c3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(e3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(38, 38, 38))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(t3)
-                .addContainerGap())
+                .addComponent(t3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -250,11 +287,11 @@ public class BullyFrame extends javax.swing.JFrame {
                 .addComponent(f3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(c3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(1, 1, 1)
                 .addComponent(e3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(t3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(23, 23, 23))
         );
 
         textArea.setColumns(20);
@@ -264,6 +301,11 @@ public class BullyFrame extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(255, 204, 204));
 
         f4.setText("Fallo");
+        f4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                f4ActionPerformed(evt);
+            }
+        });
 
         c4.setText("Cordinador");
         c4.addActionListener(new java.awt.event.ActionListener() {
@@ -281,6 +323,11 @@ public class BullyFrame extends javax.swing.JFrame {
         });
 
         e4.setText("Entrar");
+        e4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                e4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -316,6 +363,11 @@ public class BullyFrame extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(255, 204, 204));
 
         f5.setText("Fallo");
+        f5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                f5ActionPerformed(evt);
+            }
+        });
 
         c5.setText("Cordinador");
         c5.addActionListener(new java.awt.event.ActionListener() {
@@ -324,15 +376,20 @@ public class BullyFrame extends javax.swing.JFrame {
             }
         });
 
-        t8.setEditable(false);
-        t8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        t8.addActionListener(new java.awt.event.ActionListener() {
+        t5.setEditable(false);
+        t5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        t5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                t8ActionPerformed(evt);
+                t5ActionPerformed(evt);
             }
         });
 
         e5.setText("Entrar");
+        e5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                e5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -340,7 +397,7 @@ public class BullyFrame extends javax.swing.JFrame {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(t8)
+                .addComponent(t5)
                 .addContainerGap())
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
@@ -360,13 +417,18 @@ public class BullyFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(e5)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(t8, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(t5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
         );
 
         jPanel6.setBackground(new java.awt.Color(255, 204, 204));
 
         f6.setText("Fallo");
+        f6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                f6ActionPerformed(evt);
+            }
+        });
 
         c6.setText("Cordinador");
         c6.addActionListener(new java.awt.event.ActionListener() {
@@ -375,15 +437,20 @@ public class BullyFrame extends javax.swing.JFrame {
             }
         });
 
-        t5.setEditable(false);
-        t5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        t5.addActionListener(new java.awt.event.ActionListener() {
+        t6.setEditable(false);
+        t6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        t6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                t5ActionPerformed(evt);
+                t6ActionPerformed(evt);
             }
         });
 
         e6.setText("Entrar");
+        e6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                e6ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -391,7 +458,7 @@ public class BullyFrame extends javax.swing.JFrame {
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(t5)
+                .addComponent(t6)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
                 .addContainerGap(22, Short.MAX_VALUE)
@@ -411,7 +478,7 @@ public class BullyFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(e6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(t5, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(t6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -431,15 +498,20 @@ public class BullyFrame extends javax.swing.JFrame {
             }
         });
 
-        t6.setEditable(false);
-        t6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        t6.addActionListener(new java.awt.event.ActionListener() {
+        t7.setEditable(false);
+        t7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        t7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                t6ActionPerformed(evt);
+                t7ActionPerformed(evt);
             }
         });
 
         e7.setText("Entrar");
+        e7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                e7ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
@@ -447,7 +519,7 @@ public class BullyFrame extends javax.swing.JFrame {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(t6)
+                .addComponent(t7)
                 .addContainerGap())
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
@@ -467,13 +539,18 @@ public class BullyFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(e7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(t6, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(t7, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         jPanel8.setBackground(new java.awt.Color(255, 204, 204));
 
         f8.setText("Fallo");
+        f8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                f8ActionPerformed(evt);
+            }
+        });
 
         c8.setText("Cordinado");
         c8.addActionListener(new java.awt.event.ActionListener() {
@@ -482,15 +559,20 @@ public class BullyFrame extends javax.swing.JFrame {
             }
         });
 
-        t7.setEditable(false);
-        t7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        t7.addActionListener(new java.awt.event.ActionListener() {
+        t8.setEditable(false);
+        t8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        t8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                t7ActionPerformed(evt);
+                t8ActionPerformed(evt);
             }
         });
 
         e8.setText("Entrar");
+        e8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                e8ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
         jPanel8.setLayout(jPanel8Layout);
@@ -498,7 +580,7 @@ public class BullyFrame extends javax.swing.JFrame {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(t7)
+                .addComponent(t8)
                 .addContainerGap())
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addGap(21, 21, 21)
@@ -518,7 +600,7 @@ public class BullyFrame extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(e8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
-                .addComponent(t7, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(t8, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -551,26 +633,27 @@ public class BullyFrame extends javax.swing.JFrame {
                         .addComponent(jLabel6)
                         .addGap(49, 49, 49))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(209, 209, 209)
+                        .addGap(200, 200, 200)
                         .addComponent(jLabel4)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(62, 62, 62)
                         .addComponent(jLabel3))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(62, 62, 62)
-                        .addComponent(jLabel2)))
+                        .addComponent(jLabel2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(187, 187, 187)
+                        .addGap(142, 142, 142)
                         .addComponent(jLabel5)
                         .addGap(181, 181, 181)
                         .addComponent(jLabel8))
@@ -579,16 +662,16 @@ public class BullyFrame extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(76, 76, 76)
+                                        .addGap(49, 49, 49)
                                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addGap(123, 123, 123)
+                                        .addGap(93, 93, 93)
                                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(81, 81, 81))
+                                .addGap(57, 57, 57))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(114, 114, 114)))
+                                .addGap(117, 117, 117)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -640,14 +723,15 @@ public class BullyFrame extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(9, 9, 9))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(5, 5, 5)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -659,6 +743,13 @@ public class BullyFrame extends javax.swing.JFrame {
         textArea.append("El cordinador es el proceso 4"+"\n");
         t4.setText("CORDINADOR");
         t4.setBackground(Color.GREEN);
+        t1.setText("Proceso 1");
+        t2.setText("Proceso 2");
+        t3.setText("Proceso 3");
+        t6.setText("Proceso 6");
+        t7.setText("Proceso 7");
+        t8.setText("Proceso 8");
+        t5.setText("Proceso 5");
         this.c1.setVisible(false);
         this.c2.setVisible(false);
         this.c3.setVisible(false);
@@ -672,9 +763,7 @@ public class BullyFrame extends javax.swing.JFrame {
         this.f3.setVisible(true);
         this.e4.setVisible(true);
         this.e4.setEnabled(false);//Boton no se púede tocar
-        if(desicion==1){
-            this.e4.setEnabled(true);//Boton no se púede tocar
-        }
+       
         this.f4.setVisible(false);
         this.f5.setVisible(true);
         this.f6.setVisible(true);
@@ -683,12 +772,164 @@ public class BullyFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_c4ActionPerformed
 
     private void f7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f7ActionPerformed
-        // TODO add your handling code here:
+        // fallo proceso 7
+        //Aqui se detecta que fallara 
+        for (int i = 1; i <arr.size(); i++) {
+            if(arr.get(i)==this.id) arr.remove(i);
+        }
+        textArea.append("Proceso 7 detecto el fallo."+"\n");
+        //Aqui error ....
+        //Todos los que esten afuera del grupo acticar entrada.
+        //e7.setEnabled(true);
+        textArea.append("El proceso "+this.id+" sale del grupo."+"\n");
+        switch(this.id){
+            case 1:{
+                e1.setEnabled(true);
+                  t1.setText("DESACTIVADO");
+                  t1.setBackground(Color.RED);
+                break;
+            }
+            case 3:{
+                e3.setEnabled(true);
+                  t3.setText("DESACTIVADO");
+                  t3.setBackground(Color.RED);
+                break;
+            }
+            case 4:{
+                e4.setEnabled(true);
+                  t4.setText("DESACTIVADO");
+                  t4.setBackground(Color.RED);
+                break;
+            }
+            case 5:{
+                e5.setEnabled(true);
+                  t5.setText("DESACTIVADO");
+                  t5.setBackground(Color.RED);
+                break;
+            }
+            case 6:{
+                e6.setEnabled(true);
+                  t6.setText("DESACTIVADO");
+                  t6.setBackground(Color.RED);
+                break;
+            }
+            case 2:{
+                  e2.setEnabled(true);
+                  t2.setText("DESACTIVADO");
+                  t2.setBackground(Color.RED);
+                break;
+            }
+            case 8:{
+                e8.setEnabled(true);
+                  t8.setText("DESACTIVADO");
+                  t8.setBackground(Color.RED);
+                break;
+            }
+            case 7:{
+                e7.setEnabled(true);
+                  t7.setText("DESACTIVADO");
+                  t7.setBackground(Color.RED);
+                break;
+            }
+        }
+        //Ordeno el arreglo para tomar la posicion mas grande
+        Collections.sort(arr); //Para ordenar elementos.
+        for (int j = 7; j < arr.size(); j++) {
+            //System.out.println(arr.get(j));
+            textArea.append("El proceso "+arr.get(j)+" responde con OK."+"\n");
+        }
+        textArea.append("El proceso "+arr.get(arr.size()-1)+" es el nuevo cordinador."+"\n");
+        switch(arr.get(arr.size()-1)){
+            case 1:{
+                id=1;
+                t1.setText("CORDINADOR");
+                t1.setBackground(Color.GREEN);
+                f1.setVisible(false);
+                 
+                e1.setVisible(true);
+                e1.setEnabled(false);
+                break;
+            }
+            case 3:{
+                id=3;
+                t3.setText("CORDINADOR");
+                t3.setBackground(Color.GREEN);
+                f3.setVisible(false);
+                e3.setVisible(true);
+                e3.setEnabled(false);
+                break;
+            }
+            case 4:{
+                id=4;
+                t4.setText("CORDINADOR");
+                t4.setBackground(Color.GREEN);
+                f4.setVisible(false);
+                e4.setVisible(true);
+                e4.setEnabled(false);
+                break;
+            }
+            case 5:{
+                id=5;
+                t5.setText("CORDINADOR");
+                t5.setBackground(Color.GREEN);
+                f5.setVisible(false);
+                e5.setVisible(true);
+                e5.setEnabled(false);
+                break;
+            }
+            case 6:{
+                id=6;
+                t6.setText("CORDINADOR");
+                t6.setBackground(Color.GREEN);
+                f6.setVisible(false);
+                e6.setVisible(true);
+                e6.setEnabled(false);
+                break;
+            }
+            case 2:{
+                id=2;
+                t2.setText("CORDINADOR");
+                t2.setBackground(Color.GREEN);
+                f2.setVisible(false);
+                e2.setVisible(true);
+                e2.setEnabled(false);
+                break;
+            }
+            case 8:{
+                id=8;
+                t8.setText("CORDINADOR");
+                t8.setBackground(Color.GREEN);
+                f8.setVisible(false);
+                e8.setVisible(true);
+                e8.setEnabled(false);
+                break;
+            } 
+            case 7:{
+                id=7;
+                t7.setText("CORDINADOR");
+                t7.setBackground(Color.GREEN);
+                f7.setVisible(false);
+                e7.setVisible(true);
+                e7.setEnabled(false);
+                break;
+            } 
+        }
+        arr.remove(arr.size()-1);
     }//GEN-LAST:event_f7ActionPerformed
 
     private void c1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c1ActionPerformed
-        // Boton 1:
+        // Boton 1: cordinador
         id=1;
+        textArea.append("El cordinador es el proceso 1"+"\n");
+        t1.setText("CORDINADOR");
+        t1.setBackground(Color.GREEN);
+        t4.setText("Proceso 4");
+        t2.setText("Proceso 2");
+        t3.setText("Proceso 3");
+        t6.setText("Proceso 6");
+        t7.setText("Proceso 7");
+        t8.setText("Proceso 8");
+        t5.setText("Proceso 5");
         this.c1.setVisible(false);
         this.c2.setVisible(false);
         this.c3.setVisible(false);
@@ -697,7 +938,6 @@ public class BullyFrame extends javax.swing.JFrame {
         this.c6.setVisible(false);
         this.c7.setVisible(false);
         this.c8.setVisible(false);
-         this.f1.setVisible(true);
         this.f2.setVisible(true);
         this.f3.setVisible(true);
         this.f4.setVisible(true);
@@ -705,11 +945,25 @@ public class BullyFrame extends javax.swing.JFrame {
         this.f6.setVisible(true);
         this.f7.setVisible(true);
         this.f8.setVisible(true);
+        this.e1.setVisible(true);
+        this.e1.setEnabled(false);//Boton no se púede tocar
+       
+        this.f1.setVisible(false);
     }//GEN-LAST:event_c1ActionPerformed
 
     private void c2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c2ActionPerformed
         //  Boton 2 cordinador
         id=2;
+        textArea.append("El cordinador es el proceso 2"+"\n");
+        t2.setText("CORDINADOR");
+        t2.setBackground(Color.GREEN);
+        t1.setText("Proceso 1");
+        t4.setText("Proceso 4");
+        t3.setText("Proceso 3");
+        t6.setText("Proceso 6");
+        t7.setText("Proceso 7");
+        t8.setText("Proceso 8");
+        t5.setText("Proceso 5");
         this.c1.setVisible(false);
         this.c2.setVisible(false);
         this.c3.setVisible(false);
@@ -719,18 +973,31 @@ public class BullyFrame extends javax.swing.JFrame {
         this.c7.setVisible(false);
         this.c8.setVisible(false);
          this.f1.setVisible(true);
-        this.f2.setVisible(true);
         this.f3.setVisible(true);
         this.f4.setVisible(true);
         this.f5.setVisible(true);
         this.f6.setVisible(true);
         this.f7.setVisible(true);
         this.f8.setVisible(true);
+        this.e2.setVisible(true);
+        this.e2.setEnabled(false);//Boton no se púede tocar
+       
+        this.f2.setVisible(false);
     }//GEN-LAST:event_c2ActionPerformed
 
     private void c3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c3ActionPerformed
         // Boton 3 cordinador
         id=3;
+        textArea.append("El cordinador es el proceso 3"+"\n");
+        t3.setText("CORDINADOR");
+        t3.setBackground(Color.GREEN);
+        t1.setText("Proceso 1");
+        t2.setText("Proceso 2");
+        t4.setText("Proceso 4");
+        t6.setText("Proceso 6");
+        t7.setText("Proceso 7");
+        t8.setText("Proceso 8");
+        t5.setText("Proceso 5");
         this.c1.setVisible(false);
         this.c2.setVisible(false);
         this.c3.setVisible(false);
@@ -741,17 +1008,31 @@ public class BullyFrame extends javax.swing.JFrame {
         this.c8.setVisible(false);
          this.f1.setVisible(true);
         this.f2.setVisible(true);
-        this.f3.setVisible(true);
         this.f4.setVisible(true);
         this.f5.setVisible(true);
         this.f6.setVisible(true);
         this.f7.setVisible(true);
         this.f8.setVisible(true);
+        
+        this.e3.setVisible(true);
+        this.e3.setEnabled(false);//Boton no se púede tocar
+       
+        this.f3.setVisible(false);
     }//GEN-LAST:event_c3ActionPerformed
 
     private void c5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c5ActionPerformed
         // boton 5 cordiandor
         id=5;
+        textArea.append("El cordinador es el proceso 5"+"\n");
+        t5.setText("CORDINADOR");
+        t5.setBackground(Color.GREEN);
+        t1.setText("Proceso 1");
+        t2.setText("Proceso 2");
+        t3.setText("Proceso 3");
+        t6.setText("Proceso 6");
+        t7.setText("Proceso 7");
+        t8.setText("Proceso 8");
+        t4.setText("Proceso 4");
         this.c1.setVisible(false);
         this.c2.setVisible(false);
         this.c3.setVisible(false);
@@ -764,15 +1045,28 @@ public class BullyFrame extends javax.swing.JFrame {
         this.f2.setVisible(true);
         this.f3.setVisible(true);
         this.f4.setVisible(true);
-        this.f5.setVisible(true);
         this.f6.setVisible(true);
         this.f7.setVisible(true);
         this.f8.setVisible(true);
+        this.e5.setVisible(true);
+        this.e5.setEnabled(false);//Boton no se púede tocar
+       
+        this.f5.setVisible(false);
     }//GEN-LAST:event_c5ActionPerformed
 
     private void c6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c6ActionPerformed
         // Boton 6 cordiandor
         id=6;
+        textArea.append("El cordinador es el proceso 6"+"\n");
+        t6.setText("CORDINADOR");
+        t6.setBackground(Color.GREEN);
+        t1.setText("Proceso 1");
+        t2.setText("Proceso 2");
+        t3.setText("Proceso 3");
+        t4.setText("Proceso 4");
+        t7.setText("Proceso 7");
+        t8.setText("Proceso 8");
+        t5.setText("Proceso 5");
         this.c1.setVisible(false);
         this.c2.setVisible(false);
         this.c3.setVisible(false);
@@ -781,19 +1075,33 @@ public class BullyFrame extends javax.swing.JFrame {
         this.c6.setVisible(false);
         this.c7.setVisible(false);
         this.c8.setVisible(false);
-         this.f1.setVisible(true);
+        this.f1.setVisible(true);
         this.f2.setVisible(true);
         this.f3.setVisible(true);
         this.f4.setVisible(true);
         this.f5.setVisible(true);
-        this.f6.setVisible(true);
         this.f7.setVisible(true);
         this.f8.setVisible(true);
+        
+       this.e6.setVisible(true);
+        this.e6.setEnabled(false);//Boton no se púede tocar
+       
+        this.f6.setVisible(false);
     }//GEN-LAST:event_c6ActionPerformed
 
     private void c7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c7ActionPerformed
         // Boton 7 cordinador
         id=7;
+        textArea.append("El cordinador es el proceso 7"+"\n");
+        t7.setText("CORDINADOR");
+        t7.setBackground(Color.GREEN);
+        t1.setText("Proceso 1");
+        t2.setText("Proceso 2");
+        t3.setText("Proceso 3");
+        t6.setText("Proceso 6");
+        t4.setText("Proceso 4");
+        t8.setText("Proceso 8");
+        t5.setText("Proceso 5");
         this.c1.setVisible(false);
         this.c2.setVisible(false);
         this.c3.setVisible(false);
@@ -808,13 +1116,25 @@ public class BullyFrame extends javax.swing.JFrame {
         this.f4.setVisible(true);
         this.f5.setVisible(true);
         this.f6.setVisible(true);
-        this.f7.setVisible(true);
         this.f8.setVisible(true);
+       this.e7.setVisible(true);
+        this.e7.setEnabled(false);//Boton no se púede tocar
+        this.f7.setVisible(false);
     }//GEN-LAST:event_c7ActionPerformed
 
     private void c8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_c8ActionPerformed
         // Cordinador 8 boton
         id=8;
+        textArea.append("El cordinador es el proceso 8"+"\n");
+        t8.setText("CORDINADOR");
+        t8.setBackground(Color.GREEN);
+        t1.setText("Proceso 1");
+        t2.setText("Proceso 2");
+        t3.setText("Proceso 3");
+        t6.setText("Proceso 6");
+        t7.setText("Proceso 7");
+        t4.setText("Proceso 4");
+        t5.setText("Proceso 5");
         this.c1.setVisible(false);
         this.c2.setVisible(false);
         this.c3.setVisible(false);
@@ -830,16 +1150,16 @@ public class BullyFrame extends javax.swing.JFrame {
         this.f5.setVisible(true);
         this.f6.setVisible(true);
         this.f7.setVisible(true);
-        this.f8.setVisible(true);
+
+       this.e8.setVisible(true);
+        this.e8.setEnabled(false);//Boton no se púede tocar
+       
+        this.f8.setVisible(false);
     }//GEN-LAST:event_c8ActionPerformed
 
     private void t4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_t4ActionPerformed
-
-    private void t5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_t5ActionPerformed
 
     private void t6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t6ActionPerformed
         // TODO add your handling code here:
@@ -853,6 +1173,10 @@ public class BullyFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_t8ActionPerformed
 
+    private void t5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_t5ActionPerformed
+
     private void t3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_t3ActionPerformed
@@ -864,6 +1188,1129 @@ public class BullyFrame extends javax.swing.JFrame {
     private void t1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_t1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_t1ActionPerformed
+
+    private void f1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f1ActionPerformed
+        //fallo proceso 1
+        //Aqui se detecta que fallara 
+        for (int i = 1; i <arr.size(); i++) {
+            if(arr.get(i)==this.id) arr.remove(i);
+        }
+        textArea.append("Proceso 1 detecto el fallo."+"\n");
+        //Aqui error ....
+        //Todos los que esten afuera del grupo acticar entrada.
+        //e7.setEnabled(true);
+        textArea.append("El proceso "+this.id+" sale del grupo."+"\n");
+        switch(this.id){
+            case 2:{
+                e2.setEnabled(true);
+                  t2.setText("DESACTIVADO");
+                  t2.setBackground(Color.RED);
+                break;
+            }
+            case 3:{
+                e3.setEnabled(true);
+                  t3.setText("DESACTIVADO");
+                  t3.setBackground(Color.RED);
+                break;
+            }
+            case 4:{
+                e4.setEnabled(true);
+                  t4.setText("DESACTIVADO");
+                  t4.setBackground(Color.RED);
+                break;
+            }
+            case 5:{
+                e5.setEnabled(true);
+                  t5.setText("DESACTIVADO");
+                  t5.setBackground(Color.RED);
+                break;
+            }
+            case 6:{
+                e6.setEnabled(true);
+                  t6.setText("DESACTIVADO");
+                  t6.setBackground(Color.RED);
+                break;
+            }
+            case 7:{
+                  e7.setEnabled(true);
+                  t7.setText("DESACTIVADO");
+                  t7.setBackground(Color.RED);
+                break;
+            }
+            case 8:{
+                e8.setEnabled(true);
+                  t8.setText("DESACTIVADO");
+                  t8.setBackground(Color.RED);
+                break;
+            }
+        }
+        //Ordeno el arreglo para tomar la posicion mas grande
+        Collections.sort(arr); //Para ordenar elementos.
+        for (int j = 1; j < arr.size(); j++) {
+            //System.out.println(arr.get(j));
+            textArea.append("El proceso "+arr.get(j)+" responde con OK."+"\n");
+        }
+        textArea.append("El proceso "+arr.get(arr.size()-1)+" es el nuevo cordinador."+"\n");
+        switch(arr.get(arr.size()-1)){
+            case 2:{
+                id=2;
+                t2.setText("CORDINADOR");
+                t2.setBackground(Color.GREEN);
+                f2.setVisible(false);
+                 
+                e2.setVisible(true);
+                e2.setEnabled(false);
+                break;
+            }
+            case 3:{
+                id=3;
+                t3.setText("CORDINADOR");
+                t3.setBackground(Color.GREEN);
+                f3.setVisible(false);
+                e3.setVisible(true);
+                e3.setEnabled(false);
+                break;
+            }
+            case 4:{
+                id=4;
+                t4.setText("CORDINADOR");
+                t4.setBackground(Color.GREEN);
+                f4.setVisible(false);
+                e4.setVisible(true);
+                e4.setEnabled(false);
+                break;
+            }
+            case 5:{
+                id=5;
+                t5.setText("CORDINADOR");
+                t5.setBackground(Color.GREEN);
+                f5.setVisible(false);
+                e5.setVisible(true);
+                e5.setEnabled(false);
+                break;
+            }
+            case 6:{
+                id=6;
+                t6.setText("CORDINADOR");
+                t6.setBackground(Color.GREEN);
+                f6.setVisible(false);
+                e6.setVisible(true);
+                e6.setEnabled(false);
+                break;
+            }
+            case 7:{
+                id=7;
+                t7.setText("CORDINADOR");
+                t7.setBackground(Color.GREEN);
+                f7.setVisible(false);
+                e7.setVisible(true);
+                e7.setEnabled(false);
+                break;
+            }
+            case 8:{
+                id=8;
+                t8.setText("CORDINADOR");
+                t8.setBackground(Color.GREEN);
+                f8.setVisible(false);
+                e8.setVisible(true);
+                e8.setEnabled(false);
+                break;
+            } 
+        }
+        arr.remove(arr.size()-1);
+         
+    }//GEN-LAST:event_f1ActionPerformed
+
+    private void f2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f2ActionPerformed
+        //fallo2
+        //Aqui se detecta que fallara 
+        for (int i = 1; i <arr.size(); i++) {
+            if(arr.get(i)==this.id) arr.remove(i);
+        }
+        textArea.append("Proceso 2 detecto el fallo."+"\n");
+        //Aqui error ....
+        //Todos los que esten afuera del grupo acticar entrada.
+        //e7.setEnabled(true);
+        textArea.append("El proceso "+this.id+" sale del grupo."+"\n");
+        switch(this.id){
+            case 1:{
+                e1.setEnabled(true);
+                  t1.setText("DESACTIVADO");
+                  t1.setBackground(Color.RED);
+                break;
+            }
+            case 3:{
+                e3.setEnabled(true);
+                  t3.setText("DESACTIVADO");
+                  t3.setBackground(Color.RED);
+                break;
+            }
+            case 4:{
+                e4.setEnabled(true);
+                  t4.setText("DESACTIVADO");
+                  t4.setBackground(Color.RED);
+                break;
+            }
+            case 5:{
+                e5.setEnabled(true);
+                  t5.setText("DESACTIVADO");
+                  t5.setBackground(Color.RED);
+                break;
+            }
+            case 6:{
+                e6.setEnabled(true);
+                  t6.setText("DESACTIVADO");
+                  t6.setBackground(Color.RED);
+                break;
+            }
+            case 7:{
+                  e7.setEnabled(true);
+                  t7.setText("DESACTIVADO");
+                  t7.setBackground(Color.RED);
+                break;
+            }
+            case 8:{
+                e8.setEnabled(true);
+                  t8.setText("DESACTIVADO");
+                  t8.setBackground(Color.RED);
+                break;
+            }
+        }
+        //Ordeno el arreglo para tomar la posicion mas grande
+        Collections.sort(arr); //Para ordenar elementos.
+        for (int j = 2; j < arr.size(); j++) {
+            //System.out.println(arr.get(j));
+            textArea.append("El proceso "+arr.get(j)+" responde con OK."+"\n");
+        }
+        textArea.append("El proceso "+arr.get(arr.size()-1)+" es el nuevo cordinador."+"\n");
+        switch(arr.get(arr.size()-1)){
+            case 1:{
+                id=1;
+                t1.setText("CORDINADOR");
+                t1.setBackground(Color.GREEN);
+                f1.setVisible(false);
+                 
+                e1.setVisible(true);
+                e1.setEnabled(false);
+                break;
+            }
+            case 3:{
+                id=3;
+                t3.setText("CORDINADOR");
+                t3.setBackground(Color.GREEN);
+                f3.setVisible(false);
+                e3.setVisible(true);
+                e3.setEnabled(false);
+                break;
+            }
+            case 4:{
+                id=4;
+                t4.setText("CORDINADOR");
+                t4.setBackground(Color.GREEN);
+                f4.setVisible(false);
+                e4.setVisible(true);
+                e4.setEnabled(false);
+                break;
+            }
+            case 5:{
+                id=5;
+                t5.setText("CORDINADOR");
+                t5.setBackground(Color.GREEN);
+                f5.setVisible(false);
+                e5.setVisible(true);
+                e5.setEnabled(false);
+                break;
+            }
+            case 6:{
+                id=6;
+                t6.setText("CORDINADOR");
+                t6.setBackground(Color.GREEN);
+                f6.setVisible(false);
+                e6.setVisible(true);
+                e6.setEnabled(false);
+                break;
+            }
+            case 7:{
+                id=7;
+                t7.setText("CORDINADOR");
+                t7.setBackground(Color.GREEN);
+                f7.setVisible(false);
+                e7.setVisible(true);
+                e7.setEnabled(false);
+                break;
+            }
+            case 8:{
+                id=8;
+                t8.setText("CORDINADOR");
+                t8.setBackground(Color.GREEN);
+                f8.setVisible(false);
+                e8.setVisible(true);
+                e8.setEnabled(false);
+                break;
+            } 
+        }
+        arr.remove(arr.size()-1);
+         
+
+    }//GEN-LAST:event_f2ActionPerformed
+
+    private void e4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_e4ActionPerformed
+        //entrar proceso 4
+        arr.add(4);
+        //Ordeno el arreglo para tomar la posicion mas grande
+        Collections.sort(arr); //Para ordenar elementos.
+        for (int i = 0; i < arr.size(); i++) {
+            System.out.println(arr.get(i));
+        }
+        textArea.append("Entro al grupo el proceso 4."+"\n");
+        f4.setVisible(true);
+        e4.setVisible(false);
+        e4.setEnabled(true);
+        t4.setText("Proceso 4");
+        t4.setBackground(Color.WHITE);
+    }//GEN-LAST:event_e4ActionPerformed
+
+    private void e7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_e7ActionPerformed
+        // Entrar proceso 7
+         arr.add(7);
+        //Ordeno el arreglo para tomar la posicion mas grande
+        Collections.sort(arr); //Para ordenar elementos.
+        for (int i = 0; i < arr.size(); i++) {
+            System.out.println(arr.get(i));
+        }
+        textArea.append("Entro al grupo el proceso 7."+"\n");
+        f7.setVisible(true);
+        e7.setVisible(false);
+        e7.setEnabled(true);
+        t7.setText("Proceso 7");
+        t7.setBackground(Color.WHITE);
+    }//GEN-LAST:event_e7ActionPerformed
+
+    private void e8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_e8ActionPerformed
+        // Entrar proceso 8
+         arr.add(8);
+        //Ordeno el arreglo para tomar la posicion mas grande
+        Collections.sort(arr); //Para ordenar elementos.
+        for (int i = 0; i < arr.size(); i++) {
+            System.out.println(arr.get(i));
+        }
+        textArea.append("Entro al grupo el proceso 8."+"\n");
+        f8.setVisible(true);
+        e8.setVisible(false);
+        e8.setEnabled(true);
+        t8.setText("Proceso 8");
+        t8.setBackground(Color.WHITE);
+    }//GEN-LAST:event_e8ActionPerformed
+
+    private void e6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_e6ActionPerformed
+       // Entrar proceso 6
+         arr.add(6);
+        //Ordeno el arreglo para tomar la posicion mas grande
+        Collections.sort(arr); //Para ordenar elementos.
+        for (int i = 0; i < arr.size(); i++) {
+            System.out.println(arr.get(i));
+        }
+        textArea.append("Entro al grupo el proceso 6."+"\n");
+        f6.setVisible(true);
+        e6.setVisible(false);
+        e6.setEnabled(true);
+        t6.setText("Proceso 7");
+        t6.setBackground(Color.WHITE);
+    }//GEN-LAST:event_e6ActionPerformed
+
+    private void e5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_e5ActionPerformed
+        // Entrar proceso 5
+         arr.add(5);
+        //Ordeno el arreglo para tomar la posicion mas grande
+        Collections.sort(arr); //Para ordenar elementos.
+        for (int i = 0; i < arr.size(); i++) {
+            System.out.println(arr.get(i));
+        }
+        textArea.append("Entro al grupo el proceso 5."+"\n");
+        f5.setVisible(true);
+        e5.setVisible(false);
+        e5.setEnabled(true);
+        t5.setText("Proceso 5");
+        t5.setBackground(Color.WHITE);
+    }//GEN-LAST:event_e5ActionPerformed
+
+    private void e3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_e3ActionPerformed
+        // Entrar proceso 3
+         arr.add(3);
+        //Ordeno el arreglo para tomar la posicion mas grande
+        Collections.sort(arr); //Para ordenar elementos.
+        for (int i = 0; i < arr.size(); i++) {
+            System.out.println(arr.get(i));
+        }
+        textArea.append("Entro al grupo el proceso 3."+"\n");
+        f3.setVisible(true);
+        e3.setVisible(false);
+        e3.setEnabled(true);
+        t3.setText("Proceso 3");
+        t3.setBackground(Color.WHITE);
+    }//GEN-LAST:event_e3ActionPerformed
+
+    private void e2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_e2ActionPerformed
+        // Entrar proceso 2
+         arr.add(2);
+        //Ordeno el arreglo para tomar la posicion mas grande
+        Collections.sort(arr); //Para ordenar elementos.
+        for (int i = 0; i < arr.size(); i++) {
+            System.out.println(arr.get(i));
+        }
+        textArea.append("Entro al grupo el proceso 2."+"\n");
+        f2.setVisible(true);
+        e2.setVisible(false);
+        e2.setEnabled(true);
+        t2.setText("Proceso 2");
+        t2.setBackground(Color.WHITE);
+    }//GEN-LAST:event_e2ActionPerformed
+
+    private void e1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_e1ActionPerformed
+        // Entrar proceso 1
+         arr.add(1);
+        //Ordeno el arreglo para tomar la posicion mas grande
+        Collections.sort(arr); //Para ordenar elementos.
+        for (int i = 0; i < arr.size(); i++) {
+            System.out.println(arr.get(i));
+        }
+        textArea.append("Entro al grupo el proceso 1."+"\n");
+        f1.setVisible(true);
+        e1.setVisible(false);
+        e1.setEnabled(true);
+        t1.setText("Proceso 1");
+        t1.setBackground(Color.WHITE);
+    }//GEN-LAST:event_e1ActionPerformed
+
+    private void f6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f6ActionPerformed
+        // fallo 6
+          //Aqui se detecta que fallara 
+        for (int i = 1; i <arr.size(); i++) {
+            if(arr.get(i)==this.id) arr.remove(i);
+        }
+        textArea.append("Proceso 6 detecto el fallo."+"\n");
+        //Aqui error ....
+        //Todos los que esten afuera del grupo acticar entrada.
+        //e7.setEnabled(true);
+        textArea.append("El proceso "+this.id+" sale del grupo."+"\n");
+        switch(this.id){
+            case 1:{
+                e1.setEnabled(true);
+                  t1.setText("DESACTIVADO");
+                  t1.setBackground(Color.RED);
+                break;
+            }
+            case 3:{
+                e3.setEnabled(true);
+                  t3.setText("DESACTIVADO");
+                  t3.setBackground(Color.RED);
+                break;
+            }
+            case 4:{
+                e4.setEnabled(true);
+                  t4.setText("DESACTIVADO");
+                  t4.setBackground(Color.RED);
+                break;
+            }
+            case 5:{
+                e5.setEnabled(true);
+                  t5.setText("DESACTIVADO");
+                  t5.setBackground(Color.RED);
+                break;
+            }
+            case 6:{
+                e6.setEnabled(true);
+                  t6.setText("DESACTIVADO");
+                  t6.setBackground(Color.RED);
+                break;
+            }
+            case 2:{
+                  e2.setEnabled(true);
+                  t2.setText("DESACTIVADO");
+                  t2.setBackground(Color.RED);
+                break;
+            }
+            case 8:{
+                e8.setEnabled(true);
+                  t8.setText("DESACTIVADO");
+                  t8.setBackground(Color.RED);
+                break;
+            }
+            case 7:{
+                e7.setEnabled(true);
+                  t7.setText("DESACTIVADO");
+                  t7.setBackground(Color.RED);
+                break;
+            }
+        }
+        //Ordeno el arreglo para tomar la posicion mas grande
+        Collections.sort(arr); //Para ordenar elementos.
+        for (int j = 6; j < arr.size(); j++) {
+            //System.out.println(arr.get(j));
+            textArea.append("El proceso "+arr.get(j)+" responde con OK."+"\n");
+        }
+        textArea.append("El proceso "+arr.get(arr.size()-1)+" es el nuevo cordinador."+"\n");
+        switch(arr.get(arr.size()-1)){
+            case 1:{
+                id=1;
+                t1.setText("CORDINADOR");
+                t1.setBackground(Color.GREEN);
+                f1.setVisible(false);
+                 
+                e1.setVisible(true);
+                e1.setEnabled(false);
+                break;
+            }
+            case 3:{
+                id=3;
+                t3.setText("CORDINADOR");
+                t3.setBackground(Color.GREEN);
+                f3.setVisible(false);
+                e3.setVisible(true);
+                e3.setEnabled(false);
+                break;
+            }
+            case 4:{
+                id=4;
+                t4.setText("CORDINADOR");
+                t4.setBackground(Color.GREEN);
+                f4.setVisible(false);
+                e4.setVisible(true);
+                e4.setEnabled(false);
+                break;
+            }
+            case 5:{
+                id=5;
+                t5.setText("CORDINADOR");
+                t5.setBackground(Color.GREEN);
+                f5.setVisible(false);
+                e5.setVisible(true);
+                e5.setEnabled(false);
+                break;
+            }
+            case 6:{
+                id=6;
+                t6.setText("CORDINADOR");
+                t6.setBackground(Color.GREEN);
+                f6.setVisible(false);
+                e6.setVisible(true);
+                e6.setEnabled(false);
+                break;
+            }
+            case 2:{
+                id=2;
+                t2.setText("CORDINADOR");
+                t2.setBackground(Color.GREEN);
+                f2.setVisible(false);
+                e2.setVisible(true);
+                e2.setEnabled(false);
+                break;
+            }
+            case 8:{
+                id=8;
+                t8.setText("CORDINADOR");
+                t8.setBackground(Color.GREEN);
+                f8.setVisible(false);
+                e8.setVisible(true);
+                e8.setEnabled(false);
+                break;
+            } 
+            case 7:{
+                id=7;
+                t7.setText("CORDINADOR");
+                t7.setBackground(Color.GREEN);
+                f7.setVisible(false);
+                e7.setVisible(true);
+                e7.setEnabled(false);
+                break;
+            } 
+        }
+        arr.remove(arr.size()-1);
+    }//GEN-LAST:event_f6ActionPerformed
+
+    private void f5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f5ActionPerformed
+        // fallo 5
+          //Aqui se detecta que fallara 
+        for (int i = 1; i <arr.size(); i++) {
+            if(arr.get(i)==this.id) arr.remove(i);
+        }
+        textArea.append("Proceso 5 detecto el fallo."+"\n");
+        //Aqui error ....
+        //Todos los que esten afuera del grupo acticar entrada.
+        //e7.setEnabled(true);
+        textArea.append("El proceso "+this.id+" sale del grupo."+"\n");
+        switch(this.id){
+            case 1:{
+                e1.setEnabled(true);
+                  t1.setText("DESACTIVADO");
+                  t1.setBackground(Color.RED);
+                break;
+            }
+            case 3:{
+                e3.setEnabled(true);
+                  t3.setText("DESACTIVADO");
+                  t3.setBackground(Color.RED);
+                break;
+            }
+            case 4:{
+                e4.setEnabled(true);
+                  t4.setText("DESACTIVADO");
+                  t4.setBackground(Color.RED);
+                break;
+            }
+            case 5:{
+                e5.setEnabled(true);
+                  t5.setText("DESACTIVADO");
+                  t5.setBackground(Color.RED);
+                break;
+            }
+            case 6:{
+                e6.setEnabled(true);
+                  t6.setText("DESACTIVADO");
+                  t6.setBackground(Color.RED);
+                break;
+            }
+            case 2:{
+                  e2.setEnabled(true);
+                  t2.setText("DESACTIVADO");
+                  t2.setBackground(Color.RED);
+                break;
+            }
+            case 8:{
+                e8.setEnabled(true);
+                  t8.setText("DESACTIVADO");
+                  t8.setBackground(Color.RED);
+                break;
+            }
+            case 7:{
+                e7.setEnabled(true);
+                  t7.setText("DESACTIVADO");
+                  t7.setBackground(Color.RED);
+                break;
+            }
+        }
+        //Ordeno el arreglo para tomar la posicion mas grande
+        Collections.sort(arr); //Para ordenar elementos.
+        for (int j = 5; j < arr.size(); j++) {
+            //System.out.println(arr.get(j));
+            textArea.append("El proceso "+arr.get(j)+" responde con OK."+"\n");
+        }
+        textArea.append("El proceso "+arr.get(arr.size()-1)+" es el nuevo cordinador."+"\n");
+        switch(arr.get(arr.size()-1)){
+            case 1:{
+                id=1;
+                t1.setText("CORDINADOR");
+                t1.setBackground(Color.GREEN);
+                f1.setVisible(false);
+                 
+                e1.setVisible(true);
+                e1.setEnabled(false);
+                break;
+            }
+            case 3:{
+                id=3;
+                t3.setText("CORDINADOR");
+                t3.setBackground(Color.GREEN);
+                f3.setVisible(false);
+                e3.setVisible(true);
+                e3.setEnabled(false);
+                break;
+            }
+            case 4:{
+                id=4;
+                t4.setText("CORDINADOR");
+                t4.setBackground(Color.GREEN);
+                f4.setVisible(false);
+                e4.setVisible(true);
+                e4.setEnabled(false);
+                break;
+            }
+            case 5:{
+                id=5;
+                t5.setText("CORDINADOR");
+                t5.setBackground(Color.GREEN);
+                f5.setVisible(false);
+                e5.setVisible(true);
+                e5.setEnabled(false);
+                break;
+            }
+            case 6:{
+                id=6;
+                t6.setText("CORDINADOR");
+                t6.setBackground(Color.GREEN);
+                f6.setVisible(false);
+                e6.setVisible(true);
+                e6.setEnabled(false);
+                break;
+            }
+            case 2:{
+                id=2;
+                t2.setText("CORDINADOR");
+                t2.setBackground(Color.GREEN);
+                f2.setVisible(false);
+                e2.setVisible(true);
+                e2.setEnabled(false);
+                break;
+            }
+            case 8:{
+                id=8;
+                t8.setText("CORDINADOR");
+                t8.setBackground(Color.GREEN);
+                f8.setVisible(false);
+                e8.setVisible(true);
+                e8.setEnabled(false);
+                break;
+            } 
+            case 7:{
+                id=7;
+                t7.setText("CORDINADOR");
+                t7.setBackground(Color.GREEN);
+                f7.setVisible(false);
+                e7.setVisible(true);
+                e7.setEnabled(false);
+                break;
+            } 
+        }
+        arr.remove(arr.size()-1);
+    }//GEN-LAST:event_f5ActionPerformed
+
+    private void f3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f3ActionPerformed
+        //fallo 3
+          //Aqui se detecta que fallara 
+        for (int i = 1; i <arr.size(); i++) {
+            if(arr.get(i)==this.id) arr.remove(i);
+        }
+        textArea.append("Proceso 3 detecto el fallo."+"\n");
+        //Aqui error ....
+        //Todos los que esten afuera del grupo acticar entrada.
+        //e7.setEnabled(true);
+        textArea.append("El proceso "+this.id+" sale del grupo."+"\n");
+        switch(this.id){
+            case 1:{
+                e1.setEnabled(true);
+                  t1.setText("DESACTIVADO");
+                  t1.setBackground(Color.RED);
+                break;
+            }
+            case 3:{
+                e3.setEnabled(true);
+                  t3.setText("DESACTIVADO");
+                  t3.setBackground(Color.RED);
+                break;
+            }
+            case 4:{
+                e4.setEnabled(true);
+                  t4.setText("DESACTIVADO");
+                  t4.setBackground(Color.RED);
+                break;
+            }
+            case 5:{
+                e5.setEnabled(true);
+                  t5.setText("DESACTIVADO");
+                  t5.setBackground(Color.RED);
+                break;
+            }
+            case 6:{
+                e6.setEnabled(true);
+                  t6.setText("DESACTIVADO");
+                  t6.setBackground(Color.RED);
+                break;
+            }
+            case 2:{
+                  e2.setEnabled(true);
+                  t2.setText("DESACTIVADO");
+                  t2.setBackground(Color.RED);
+                break;
+            }
+            case 8:{
+                e8.setEnabled(true);
+                  t8.setText("DESACTIVADO");
+                  t8.setBackground(Color.RED);
+                break;
+            }
+            case 7:{
+                e7.setEnabled(true);
+                  t7.setText("DESACTIVADO");
+                  t7.setBackground(Color.RED);
+                break;
+            }
+        }
+        //Ordeno el arreglo para tomar la posicion mas grande
+        Collections.sort(arr); //Para ordenar elementos.
+        for (int j = 3; j < arr.size(); j++) {
+            //System.out.println(arr.get(j));
+            textArea.append("El proceso "+arr.get(j)+" responde con OK."+"\n");
+        }
+        textArea.append("El proceso "+arr.get(arr.size()-1)+" es el nuevo cordinador."+"\n");
+        switch(arr.get(arr.size()-1)){
+            case 1:{
+                id=1;
+                t1.setText("CORDINADOR");
+                t1.setBackground(Color.GREEN);
+                f1.setVisible(false);
+                 
+                e1.setVisible(true);
+                e1.setEnabled(false);
+                break;
+            }
+            case 3:{
+                id=3;
+                t3.setText("CORDINADOR");
+                t3.setBackground(Color.GREEN);
+                f3.setVisible(false);
+                e3.setVisible(true);
+                e3.setEnabled(false);
+                break;
+            }
+            case 4:{
+                id=4;
+                t4.setText("CORDINADOR");
+                t4.setBackground(Color.GREEN);
+                f4.setVisible(false);
+                e4.setVisible(true);
+                e4.setEnabled(false);
+                break;
+            }
+            case 5:{
+                id=5;
+                t5.setText("CORDINADOR");
+                t5.setBackground(Color.GREEN);
+                f5.setVisible(false);
+                e5.setVisible(true);
+                e5.setEnabled(false);
+                break;
+            }
+            case 6:{
+                id=6;
+                t6.setText("CORDINADOR");
+                t6.setBackground(Color.GREEN);
+                f6.setVisible(false);
+                e6.setVisible(true);
+                e6.setEnabled(false);
+                break;
+            }
+            case 2:{
+                id=2;
+                t2.setText("CORDINADOR");
+                t2.setBackground(Color.GREEN);
+                f2.setVisible(false);
+                e2.setVisible(true);
+                e2.setEnabled(false);
+                break;
+            }
+            case 8:{
+                id=8;
+                t8.setText("CORDINADOR");
+                t8.setBackground(Color.GREEN);
+                f8.setVisible(false);
+                e8.setVisible(true);
+                e8.setEnabled(false);
+                break;
+            } 
+            case 7:{
+                id=7;
+                t7.setText("CORDINADOR");
+                t7.setBackground(Color.GREEN);
+                f7.setVisible(false);
+                e7.setVisible(true);
+                e7.setEnabled(false);
+                break;
+            } 
+        }
+        arr.remove(arr.size()-1);
+    }//GEN-LAST:event_f3ActionPerformed
+
+    private void f4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f4ActionPerformed
+        //Fallo 4
+          //Aqui se detecta que fallara 
+        for (int i = 1; i <arr.size(); i++) {
+            if(arr.get(i)==this.id) arr.remove(i);
+        }
+        textArea.append("Proceso 4 detecto el fallo."+"\n");
+        //Aqui error ....
+        //Todos los que esten afuera del grupo acticar entrada.
+        //e7.setEnabled(true);
+        textArea.append("El proceso "+this.id+" sale del grupo."+"\n");
+        switch(this.id){
+            case 1:{
+                e1.setEnabled(true);
+                  t1.setText("DESACTIVADO");
+                  t1.setBackground(Color.RED);
+                break;
+            }
+            case 3:{
+                e3.setEnabled(true);
+                  t3.setText("DESACTIVADO");
+                  t3.setBackground(Color.RED);
+                break;
+            }
+            case 4:{
+                e4.setEnabled(true);
+                  t4.setText("DESACTIVADO");
+                  t4.setBackground(Color.RED);
+                break;
+            }
+            case 5:{
+                e5.setEnabled(true);
+                  t5.setText("DESACTIVADO");
+                  t5.setBackground(Color.RED);
+                break;
+            }
+            case 6:{
+                e6.setEnabled(true);
+                  t6.setText("DESACTIVADO");
+                  t6.setBackground(Color.RED);
+                break;
+            }
+            case 2:{
+                  e2.setEnabled(true);
+                  t2.setText("DESACTIVADO");
+                  t2.setBackground(Color.RED);
+                break;
+            }
+            case 8:{
+                e8.setEnabled(true);
+                  t8.setText("DESACTIVADO");
+                  t8.setBackground(Color.RED);
+                break;
+            }
+            case 7:{
+                e7.setEnabled(true);
+                  t7.setText("DESACTIVADO");
+                  t7.setBackground(Color.RED);
+                break;
+            }
+        }
+        //Ordeno el arreglo para tomar la posicion mas grande
+        Collections.sort(arr); //Para ordenar elementos.
+        for (int j = 4; j < arr.size(); j++) {
+            //System.out.println(arr.get(j));
+            textArea.append("El proceso "+arr.get(j)+" responde con OK."+"\n");
+        }
+        textArea.append("El proceso "+arr.get(arr.size()-1)+" es el nuevo cordinador."+"\n");
+        switch(arr.get(arr.size()-1)){
+            case 1:{
+                id=1;
+                t1.setText("CORDINADOR");
+                t1.setBackground(Color.GREEN);
+                f1.setVisible(false);
+                 
+                e1.setVisible(true);
+                e1.setEnabled(false);
+                break;
+            }
+            case 3:{
+                id=3;
+                t3.setText("CORDINADOR");
+                t3.setBackground(Color.GREEN);
+                f3.setVisible(false);
+                e3.setVisible(true);
+                e3.setEnabled(false);
+                break;
+            }
+            case 4:{
+                id=4;
+                t4.setText("CORDINADOR");
+                t4.setBackground(Color.GREEN);
+                f4.setVisible(false);
+                e4.setVisible(true);
+                e4.setEnabled(false);
+                break;
+            }
+            case 5:{
+                id=5;
+                t5.setText("CORDINADOR");
+                t5.setBackground(Color.GREEN);
+                f5.setVisible(false);
+                e5.setVisible(true);
+                e5.setEnabled(false);
+                break;
+            }
+            case 6:{
+                id=6;
+                t6.setText("CORDINADOR");
+                t6.setBackground(Color.GREEN);
+                f6.setVisible(false);
+                e6.setVisible(true);
+                e6.setEnabled(false);
+                break;
+            }
+            case 2:{
+                id=2;
+                t2.setText("CORDINADOR");
+                t2.setBackground(Color.GREEN);
+                f2.setVisible(false);
+                e2.setVisible(true);
+                e2.setEnabled(false);
+                break;
+            }
+            case 8:{
+                id=8;
+                t8.setText("CORDINADOR");
+                t8.setBackground(Color.GREEN);
+                f8.setVisible(false);
+                e8.setVisible(true);
+                e8.setEnabled(false);
+                break;
+            } 
+            case 7:{
+                id=7;
+                t7.setText("CORDINADOR");
+                t7.setBackground(Color.GREEN);
+                f7.setVisible(false);
+                e7.setVisible(true);
+                e7.setEnabled(false);
+                break;
+            } 
+        }
+        arr.remove(arr.size()-1);
+    }//GEN-LAST:event_f4ActionPerformed
+
+    private void f8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f8ActionPerformed
+        // fallo 8
+          //Aqui se detecta que fallara 
+        for (int i = 1; i <arr.size(); i++) {
+            if(arr.get(i)==this.id) arr.remove(i);
+        }
+        textArea.append("Proceso 7 detecto el fallo."+"\n");
+        //Aqui error ....
+        //Todos los que esten afuera del grupo acticar entrada.
+        //e7.setEnabled(true);
+        textArea.append("El proceso "+this.id+" sale del grupo."+"\n");
+        switch(this.id){
+            case 1:{
+                e1.setEnabled(true);
+                  t1.setText("DESACTIVADO");
+                  t1.setBackground(Color.RED);
+                break;
+            }
+            case 3:{
+                e3.setEnabled(true);
+                  t3.setText("DESACTIVADO");
+                  t3.setBackground(Color.RED);
+                break;
+            }
+            case 4:{
+                e4.setEnabled(true);
+                  t4.setText("DESACTIVADO");
+                  t4.setBackground(Color.RED);
+                break;
+            }
+            case 5:{
+                e5.setEnabled(true);
+                  t5.setText("DESACTIVADO");
+                  t5.setBackground(Color.RED);
+                break;
+            }
+            case 6:{
+                e6.setEnabled(true);
+                  t6.setText("DESACTIVADO");
+                  t6.setBackground(Color.RED);
+                break;
+            }
+            case 2:{
+                  e2.setEnabled(true);
+                  t2.setText("DESACTIVADO");
+                  t2.setBackground(Color.RED);
+                break;
+            }
+            case 8:{
+                e8.setEnabled(true);
+                  t8.setText("DESACTIVADO");
+                  t8.setBackground(Color.RED);
+                break;
+            }
+            case 7:{
+                e7.setEnabled(true);
+                  t7.setText("DESACTIVADO");
+                  t7.setBackground(Color.RED);
+                break;
+            }
+        }
+        //Ordeno el arreglo para tomar la posicion mas grande
+        Collections.sort(arr); //Para ordenar elementos.
+        for (int j = 8; j < arr.size(); j++) {
+            //System.out.println(arr.get(j));
+            textArea.append("El proceso "+arr.get(j)+" responde con OK."+"\n");
+        }
+        textArea.append("El proceso "+arr.get(arr.size()-1)+" es el nuevo cordinador."+"\n");
+        switch(arr.get(arr.size()-1)){
+            case 1:{
+                id=1;
+                t1.setText("CORDINADOR");
+                t1.setBackground(Color.GREEN);
+                f1.setVisible(false);
+                 
+                e1.setVisible(true);
+                e1.setEnabled(false);
+                break;
+            }
+            case 3:{
+                id=3;
+                t3.setText("CORDINADOR");
+                t3.setBackground(Color.GREEN);
+                f3.setVisible(false);
+                e3.setVisible(true);
+                e3.setEnabled(false);
+                break;
+            }
+            case 4:{
+                id=4;
+                t4.setText("CORDINADOR");
+                t4.setBackground(Color.GREEN);
+                f4.setVisible(false);
+                e4.setVisible(true);
+                e4.setEnabled(false);
+                break;
+            }
+            case 5:{
+                id=5;
+                t5.setText("CORDINADOR");
+                t5.setBackground(Color.GREEN);
+                f5.setVisible(false);
+                e5.setVisible(true);
+                e5.setEnabled(false);
+                break;
+            }
+            case 6:{
+                id=6;
+                t6.setText("CORDINADOR");
+                t6.setBackground(Color.GREEN);
+                f6.setVisible(false);
+                e6.setVisible(true);
+                e6.setEnabled(false);
+                break;
+            }
+            case 2:{
+                id=2;
+                t2.setText("CORDINADOR");
+                t2.setBackground(Color.GREEN);
+                f2.setVisible(false);
+                e2.setVisible(true);
+                e2.setEnabled(false);
+                break;
+            }
+            case 8:{
+                id=8;
+                t8.setText("CORDINADOR");
+                t8.setBackground(Color.GREEN);
+                f8.setVisible(false);
+                e8.setVisible(true);
+                e8.setEnabled(false);
+                break;
+            } 
+            case 7:{
+                id=7;
+                t7.setText("CORDINADOR");
+                t7.setBackground(Color.GREEN);
+                f7.setVisible(false);
+                e7.setVisible(true);
+                e7.setEnabled(false);
+                break;
+            } 
+        }
+        arr.remove(arr.size()-1);
+    }//GEN-LAST:event_f8ActionPerformed
 
     /**
      * @param args the command line arguments
